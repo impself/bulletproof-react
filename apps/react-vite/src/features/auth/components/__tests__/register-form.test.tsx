@@ -5,6 +5,7 @@ import { RegisterForm } from '../register-form';
 
 test('should register new user and call onSuccess cb which should navigate the user to the app', async () => {
   const newUser = createUser({});
+  newUser.password = 'hrt123456';
 
   const onSuccess = vi.fn();
 
@@ -24,7 +25,7 @@ test('should register new user and call onSuccess cb which should navigate the u
   await userEvent.type(screen.getByLabelText(/password/i), newUser.password);
   await userEvent.type(screen.getByLabelText(/team name/i), newUser.teamName);
 
-  await userEvent.click(screen.getByRole('button', { name: /register/i }));
+  await userEvent.click(screen.getByRole('button', { name: /Register/i }));
 
   await waitFor(() => expect(onSuccess).toHaveBeenCalledTimes(1));
 });
