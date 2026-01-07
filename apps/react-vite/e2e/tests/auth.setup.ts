@@ -27,7 +27,7 @@ setup('authenticate', async ({ page }) => {
 
   // log out:
   await page.getByRole('button', { name: 'Open user menu' }).click();
-  await page.getByRole('menuitem', { name: 'Sign Out' }).click();
+  await page.getByRole('menuitem', { name: '退出' }).click();
   await page.waitForURL('/auth/login?redirectTo=%2Fapp');
 
   // log in:
@@ -35,7 +35,7 @@ setup('authenticate', async ({ page }) => {
   await page.getByLabel('Email Address').fill(user.email);
   await page.getByLabel('Password').click();
   await page.getByLabel('Password').fill(user.password);
-  await page.getByRole('button', { name: 'Log in' }).click();
+  await page.getByRole('button', { name: '芝麻开门' }).click();
   await page.waitForURL('/app');
 
   await page.context().storageState({ path: authFile });

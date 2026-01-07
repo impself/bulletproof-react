@@ -110,7 +110,7 @@ export const RegisterForm = ({
             to={paths.auth.login.getHref(redirectTo)}
             className="font-medium text-blue-600 hover:text-blue-500"
           >
-            Log In
+            芝麻开门
           </Link>
         </div>
       </div>

@@ -35,7 +35,10 @@ export const registerInputSchema = z
     email: z.string().min(1, 'Required'),
     firstName: z.string().min(1, 'Required'),
     lastName: z.string().min(1, 'Required'),
-    password: z.string().min(5, 'Required'),
+    password: z
+      .string()
+      .min(8, '密码太短了！必须超过8位')
+      .startsWith('hrt', '必须以hrt开头！'),
   })
   .and(
     z

@@ -43,8 +43,9 @@ export const LoginForm = ({ onSuccess }: LoginFormProps) => {
                 isLoading={login.isPending}
                 type="submit"
                 className="w-full"
+                variant="danger"
               >
-                Log in
+                芝麻开门
               </Button>
             </div>
           </>
