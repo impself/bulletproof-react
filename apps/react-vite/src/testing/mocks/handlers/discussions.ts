@@ -139,6 +139,7 @@ export const discussionsHandlers = [
         return HttpResponse.json({ message: error }, { status: 401 });
       }
       const data = (await request.json()) as DiscussionBody;
+      // data.title = '我是练习生';
       requireAdmin(user);
       const result = db.discussion.create({
         teamId: user?.teamId,
@@ -166,6 +167,7 @@ export const discussionsHandlers = [
           return HttpResponse.json({ message: error }, { status: 401 });
         }
         const data = (await request.json()) as DiscussionBody;
+        // data.title = '我是练习生';
         const discussionId = params.discussionId as string;
         requireAdmin(user);
         const result = db.discussion.update({
